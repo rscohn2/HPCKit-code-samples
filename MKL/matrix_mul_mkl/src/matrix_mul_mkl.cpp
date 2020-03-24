@@ -1,5 +1,5 @@
 //==============================================================
-// Copyright © 2020 Intel Corporation
+// Copyright Â© 2020 Intel Corporation
 //
 // SPDX-License-Identifier: MIT
 // =============================================================
@@ -70,9 +70,6 @@ int main() {
   
   cout << "Problem size: c(" << M << "," << P << ") = a(" << M << "," << N << ") * b(" << N << "," << P << ")" << std::endl;
 
-  //
-  // Execute Gemm
-  //
   auto asyncHandler = [&](cl::sycl::exception_list eL) {
     for (auto& e : eL) {
       try {
@@ -87,6 +84,9 @@ int main() {
     }
   };
 
+  //
+  // Execute Gemm
+  //
   try {
     // Initializing the devices queue with the default selector
     // The device queue is used to enqueue the kernels and encapsulates
